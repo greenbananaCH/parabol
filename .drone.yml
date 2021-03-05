@@ -15,3 +15,7 @@ steps:
     repo: greenbanana/parabol
     target: prod
     auto_tag: true
+
+trigger:
+  branch:
+    - drone
