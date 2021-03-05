@@ -6,6 +6,7 @@ steps:
   image: plugins/docker
   when:
     event: [ tag ]
+    branch: drone
   settings:
     dockerfile: docker/Dockerfile.prod
     username:
@@ -15,7 +16,3 @@ steps:
     repo: greenbanana/parabol
     target: prod
     auto_tag: true
-
-trigger:
-  branch:
-    - drone
