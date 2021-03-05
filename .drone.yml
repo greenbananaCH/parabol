@@ -5,7 +5,10 @@ steps:
 - name: docker
   image: plugins/docker
   when:
-    event: [ tag ]
+    branch:
+    - drone
+    event:
+    - tag
   settings:
     dockerfile: docker/Dockerfile.prod
     username:
