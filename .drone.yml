@@ -1,0 +1,17 @@
+kind: pipeline
+name: default
+
+steps:
+- name: docker
+  image: plugins/docker
+  when:
+    event: [ tag ]
+  settings:
+    dockerfile: docker/Dockerfile.prod
+    username:
+      from_secret: DOCKER_HUB_USER
+    password:
+      from_secret: DOCKER_HUB_PASSWORD
+    repo: greenbanana/parabol
+    target: prod
+    auto_tag: true
